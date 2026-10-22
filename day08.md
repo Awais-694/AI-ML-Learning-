@@ -1,0 +1,89 @@
+# Day 8 - NumPy
+
+Today I started NumPy. Before this I was handling data with simple Python lists, now I am moving to a proper numerical library.
+
+## Introduction to NumPy
+
+NumPy stands for Numerical Python. It is the most important Python library for working with numbers and data. Its main job is creating arrays and doing fast maths operations on them.
+
+A normal Python list gets slow when the data grows, because you have to loop over every element one by one. In a NumPy array the operation runs on the whole array at once, and C language is working behind the scenes, so it is much faster too.
+
+In machine learning everything is in the form of numbers and arrays, so learning NumPy was necessary.
+
+## Installation & Usage
+
+I am using Anaconda, and NumPy comes pre-installed with it. If someone does not have it installed, it can be installed with pip:
+
+pip install numpy
+
+To use it, you import it. Everyone imports it with the short name np, it has become a standard now:
+
+import numpy as np
+
+After that, all NumPy functions can be used by writing np.
+
+## Python List vs NumPy Array
+
+The main differences between the two are:
+
+- A list can hold different types of data, an array usually holds only one type
+- You cannot do direct maths on a list, a loop is needed. On an array, the operation applies to the whole array at once
+- An array takes less memory compared to a list and is faster
+
+An example made the difference clear. Multiplying a list by 2 repeats the list, the numbers do not double:
+
+numbers = [1, 2, 3, 4]
+print(numbers * 2)
+
+Output:
+[1, 2, 3, 4, 1, 2, 3, 4]
+
+The same work in a NumPy array:
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+print(arr * 2)
+
+Output:
+[2 4 6 8]
+
+In an array the operation applies on every element, that is its real power.
+
+## Creating Arrays from Lists
+
+Creating an array from a list is the most basic method, np.array() is used for it:
+
+import numpy as np
+
+marks = [78, 85, 90, 66]
+arr = np.array(marks)
+print(arr)
+print(type(arr))
+
+Output:
+[78 85 90 66]
+<class 'numpy.ndarray'>
+
+A 2D array can also be created by giving lists inside a list:
+
+data = np.array([[1, 2, 3], [4, 5, 6]])
+print(data)
+print(data.shape)
+
+Output:
+[[1 2 3]
+ [4 5 6]]
+(2, 3)
+
+shape tells how many rows and columns there are, here it is 2 rows and 3 columns.
+
+dtype is used to check the type of data inside the array:
+
+floats = np.array([1.5, 2.0, 3.5])
+print(floats.dtype)
+
+Output:
+float64
+
+That is all for today. The basics of NumPy are in place, now I have to practice on it.
