@@ -113,4 +113,25 @@ NumPy Array Time: 0.104 seconds
 
 The list had to go through every element one by one with a loop, while the array did the whole operation at once. On bigger data this difference becomes much bigger. The full notebook of this test (numpy_tutorial.ipynb) is also in this repo.
 
+## Why NumPy Is Fast - Continuous Memory Blocks
+
+NumPy stores its data in continuous memory blocks, all values together in one place. A Python list does not store the actual values together, it stores references and the objects are scattered in different places in memory. That is why the array is fast, the processor gets all the data from one block.
+
+I checked the memory of both with 1000 elements:
+
+import numpy as np
+import sys
+
+py_list = list(range(1000))
+np_arr = np.array(py_list)
+
+print("Python List Memory:", sys.getsizeof(py_list), "Bytes")
+print("NumPY Array Memory:", np_arr.nbytes, "Bytes")
+
+Output:
+Python List Memory: 8056 Bytes
+NumPY Array Memory: 8000 Bytes
+
+Here the list size is only the size of its references, the actual integer objects are separate in memory on top of that. The array's 8000 bytes is its complete data, stored in one continuous block. This notebook (numpy_tutorial-2.ipynb) is also in this repo.
+
 That is all for today. The basics of NumPy are in place, now I have to practice on it.
