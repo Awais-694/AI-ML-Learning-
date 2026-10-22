@@ -86,4 +86,31 @@ print(floats.dtype)
 Output:
 float64
 
+## Practical Example - Speed Comparison
+
+I also did a small practical test to see the speed difference myself. I took 5 million employee salaries, added a 500 bonus to every salary, and timed both ways:
+
+import numpy as np
+import time
+
+employees = 5_000_000
+salaries_list = list(range(employees))
+
+start = time.time()
+bonus_list = [s + 500 for s in salaries_list]
+end = time.time()
+print("Python List Time:", end - start, "seconds")
+
+salaries_array = np.array(salaries_list)
+start = time.time()
+bonus_array = salaries_array + 500
+end = time.time()
+print("NumPy Array Time:", end - start, "seconds")
+
+Output:
+Python List Time: 0.239 seconds
+NumPy Array Time: 0.104 seconds
+
+The list had to go through every element one by one with a loop, while the array did the whole operation at once. On bigger data this difference becomes much bigger. The full notebook of this test (numpy_tutorial.ipynb) is also in this repo.
+
 That is all for today. The basics of NumPy are in place, now I have to practice on it.
