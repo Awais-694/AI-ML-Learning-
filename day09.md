@@ -47,7 +47,7 @@ Output:
 
 So (2, 3) means 2 rows and 3 columns. This is the method I will probably use the most, because real data usually comes as rows and columns anyway.
 
-The full notebook for this part (numpy_tutorial-3.ipynb) is also in this repo.
+The full notebook for this part (day09_numpy_tutorial-3.ipynb) is also in this repo.
 
 ## Creating Arrays using Built-in Methods
 
@@ -142,7 +142,7 @@ Output:
 
 This one is useful when you need evenly spaced points, like for a graph.
 
-The full notebook for this part (numpy_tutorial-4.ipynb) is also in this repo.
+The full notebook for this part (day09_numpy_tutorial-4.ipynb) is also in this repo.
 
 ## Array Properties
 
@@ -221,6 +221,6 @@ float64
 
 The numbers are the same, only the type changed, and now every value has a decimal point. This matters because some operations need float values, and mixing types can cause errors later.
 
-The full notebook for this part (numpy_tutorial-5.ipynb) is also in this repo.
+The full notebook for this part (day09_numpy_tutorial-5.ipynb) is also in this repo.
 
 That is all for today. Now I can make arrays three different ways and check what kind of array I actually made, which feels like a proper base before moving to operations on arrays.
