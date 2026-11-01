@@ -1,6 +1,6 @@
 # Day 13 — NumPy: Mathematical Functions and Other Math Functions
 
-Today was all about the built-in math functions that replace hand-written loops: first the aggregate functions that collapse an array into a single number, then the element-wise functions that transform every value.
+Today was mostly NumPy math functions, plus two theory topics that had no code: the data science process and EDA.
 
 ## Mathematical Functions (Aggregate Functions)
 
@@ -103,6 +103,31 @@ print("4. Trunc: ", np.trunc(arr))
 ```
 
 The case that cleared it up for me is -3.8: floor pushes it down to -4, ceil pulls it up to -3, trunc just chops the decimal part and gives -3, and round goes to the nearest whole number, -4. Once you see all four side by side, the difference is hard to forget.
+
+## Data Science Process (Theory)
+
+This is the overall workflow a data science project follows, step by step. The order matters because each step depends on the one before it:
+
+1. Problem understanding — figure out what question you are actually trying to answer before touching any data.
+2. Data collection — gather the data you need from whatever sources are available.
+3. Data cleaning — handle missing values, fix wrong entries, and get the data into a usable shape. This usually takes the most time.
+4. Exploratory data analysis — look at the data to understand it (this is EDA, the next topic).
+5. Modeling — build a model on the prepared data.
+6. Evaluation — check whether the model actually answers the original question well enough.
+7. Deployment and communication — put the result to use and explain it to the people who need it.
+
+The main lesson: modeling is only one step in the middle. Most of the work is understanding the problem and preparing the data.
+
+## What is EDA (Theory)
+
+EDA stands for Exploratory Data Analysis. It means exploring the data before building any model, to understand what you are working with. The things you typically look for:
+
+- The shape and structure of the data — how many rows and columns, what types the values are.
+- Summary statistics — mean, median, min, max, and spread, the same kind of numbers the aggregate functions give.
+- Missing values and outliers — gaps or extreme values that would mislead a model if left alone.
+- Distributions and relationships — how values are spread out, and whether columns move together, usually checked with simple plots like histograms, box plots, and scatter plots.
+
+The point of EDA is to avoid garbage in, garbage out. If you skip it, you can build a model on data you never really understood, and the results will look fine while being wrong.
 
 ## Notebooks
 
